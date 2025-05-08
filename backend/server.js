@@ -25,9 +25,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const corsOptions = {
-  origin: 'https://artwork077.netlify.app',  // Allow requests from this origin
+  origin: ['https://artwork077.netlify.app', 'http://localhost:5173'], // Allow both Netlify and localhost origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
-  credentials: true,  // Allow credentials if needed (like cookies, sessions)
+  credentials: true,  // Allow credentials (cookies, sessions)
 };
 
 // Enable CORS with the specified options
