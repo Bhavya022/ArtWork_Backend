@@ -24,6 +24,14 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const corsOptions = {
+  origin: 'https://artwork077.netlify.app',  // Allow requests from this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
+  credentials: true,  // Allow credentials if needed (like cookies, sessions)
+};
+
+// Enable CORS with the specified options
+app.use(cors(corsOptions));
 // Middleware
 app.use(cors());
 app.use(helmet());

@@ -52,7 +52,7 @@ export const register = async (req, res) => {
     // Generate token
     const token = jwt.sign(
       { id: result.insertId, username, role },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'artshow',
       { expiresIn: '24h' }
     );
     
@@ -118,7 +118,7 @@ export const login = async (req, res) => {
     // Generate token
     const token = jwt.sign(
       { id: user.id, username: user.username, role: user.role },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'artshow',
       { expiresIn: '24h' }
     );
     

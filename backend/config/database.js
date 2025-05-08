@@ -5,14 +5,21 @@ dotenv.config();
 
 // Database configuration
 const config = {
-  host: process.env.DB_HOST || 'localhost',
+  host: process.env.DB_HOST || 'hopper.proxy.rlwy.net',
   user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'bhavya@22',
-  database: process.env.DB_NAME || 'artshow_db',
+  password: process.env.DB_PASSWORD || 'DzYfPAgJyogksidWBcHhJJdsSMExHKvL',
+  database: process.env.DB_NAME || 'railway',
+  port: process.env.DB_PORT || 56234, 
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
 };
+
+// DB_HOST=hopper.proxy.rlwy.net
+// DB_USER=root
+// DB_PASSWORD=DzYfPAgJyogksidWBcHhJJdsSMExHKvL
+// DB_PORT=56234
+// DB_NAME=railway
 
 // Create connection pool
 const pool = mysql.createPool(config);
